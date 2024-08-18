@@ -1,4 +1,4 @@
-package de.thegame4craft.Commands;
+package de.thegame4craft.commands;
 
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.builder.Command;

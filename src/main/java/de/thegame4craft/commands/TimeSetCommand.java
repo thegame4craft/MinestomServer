@@ -1,12 +1,9 @@
-package de.thegame4craft.Commands;
+package de.thegame4craft.commands;
 
-import de.thegame4craft.Main;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.arguments.ArgumentType;
-import net.minestom.server.entity.Player;
 import net.minestom.server.instance.Instance;
-import net.minestom.server.instance.InstanceContainer;
 import org.jetbrains.annotations.NotNull;
 
 public class TimeSetCommand extends Command {

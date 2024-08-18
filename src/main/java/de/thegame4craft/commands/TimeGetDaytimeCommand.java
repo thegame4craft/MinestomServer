@@ -1,11 +1,8 @@
-package de.thegame4craft.Commands;
+package de.thegame4craft.commands;
 
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.builder.Command;
-import net.minestom.server.command.builder.arguments.ArgumentType;
 import net.minestom.server.entity.Player;
-import net.minestom.server.instance.Instance;
-import org.jetbrains.annotations.NotNull;
 
 public class TimeGetDaytimeCommand extends Command {
     public TimeGetDaytimeCommand() {
