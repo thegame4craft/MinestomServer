@@ -1,16 +1,8 @@
 package de.thegame4craft.events;
 
 import net.minestom.server.coordinate.Pos;
-import net.minestom.server.entity.GameMode;
-import net.minestom.server.instance.block.Block;
-import net.minestom.server.instance.block.BlockFace;
-import net.minestom.server.instance.block.BlockHandler;
-
-import java.util.Locale;
-import java.util.Objects;
 
 public class PlayerBlockPlaceEvent {
-    @SuppressWarnings("UnstableApiUsage")
     public static void execute(net.minestom.server.event.player.PlayerBlockPlaceEvent event) {
 
 
