@@ -16,6 +16,8 @@ dependencies {
     implementation("net.minestom:minestom-snapshots:6c5cd6544e")
     implementation("org.slf4j:slf4j-api:2.0.16")
     implementation("org.slf4j:slf4j-simple:2.0.16")
+    implementation("com.moandjiezana.toml:toml4j:0.7.2")
+    implementation("org.json:json:20240303")
 }
 java {
     toolchain {
