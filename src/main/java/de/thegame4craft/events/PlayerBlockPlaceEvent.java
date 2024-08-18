@@ -12,14 +12,12 @@ import java.util.Objects;
 public class PlayerBlockPlaceEvent {
     @SuppressWarnings("UnstableApiUsage")
     public static void execute(net.minestom.server.event.player.PlayerBlockPlaceEvent event) {
-        event.consumeBlock(event.getPlayer().getGameMode() != GameMode.CREATIVE);
-        // rotate block
-        //BlockFace face = event.getPlayer().getPosition().yaw() > 0 ? BlockFace.NORTH : BlockFace.SOUTH;
 
 
-        // sides
         String face = "NORTH";
         Pos pos = event.getPlayer().getPosition();
+
+        // generate the face the block should be locking at
         if(pos.pitch() >= 45) {
             face = "UP";
         } else if (pos.pitch() <= -45) {
@@ -34,6 +32,8 @@ public class PlayerBlockPlaceEvent {
         } else if(pos.yaw() >= 45 && pos.yaw() <= 135) { // player is facing west
             face = "EAST";
         }
+
+        // check if the block has a facing property. Some blocks (like the Stone block) don't have a facing property so setting one will result in an exception
         String hasFacing = event.getBlock().getProperty("facing");
         if(hasFacing != null) {
             event.setBlock(event.getBlock().withProperty("facing", face.toLowerCase()));
