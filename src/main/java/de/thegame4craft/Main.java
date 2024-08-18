@@ -7,6 +7,7 @@ import de.thegame4craft.core.Jobs;
 import de.thegame4craft.core.PermissionManager;
 import de.thegame4craft.core.PropertiesManager;
 import de.thegame4craft.core.WorldManager;
+import de.thegame4craft.events.ItemPickupEvent;
 import de.thegame4craft.events.PlayerJoinEvent;
 import de.thegame4craft.util.FileSystemHelper;
 import net.minestom.server.MinecraftServer;
@@ -85,6 +86,8 @@ public class Main {
         globalEventHandler.addListener(PlayerSpawnEvent.class, PlayerJoinEvent::phase2);
         globalEventHandler.addListener(PlayerMoveEvent.class, de.thegame4craft.events.PlayerMoveEvent::execute);
         globalEventHandler.addListener(PlayerBlockPlaceEvent.class, de.thegame4craft.events.PlayerBlockPlaceEvent::execute);
+        globalEventHandler.addListener(PlayerBlockBreakEvent.class, de.thegame4craft.events.PlayerBlockBreakEvent::execute);
+        globalEventHandler.addListener(PickupItemEvent.class, ItemPickupEvent::execute);
         globalEventHandler.addListener(PlayerDisconnectEvent.class, playerDisconnectEvent -> {
             worldManager.saveWorlds();
         });
