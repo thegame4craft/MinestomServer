@@ -1,6 +1,8 @@
 package de.thegame4craft.util;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 public class FileSystemHelper {
     public static void deleteFolder(File folder) {
@@ -17,10 +19,20 @@ public class FileSystemHelper {
         folder.delete();
     }
 
-    public static void crateFolderIfNotExists(File folder) {
-        if(!folder.exists()) {
-            if(!folder.mkdirs()) {
+    public static void createFolderIfNotExists(File folder) {
+        if (!folder.exists()) {
+            if (!folder.mkdirs()) {
                 throw new RuntimeException("Failed to create folder: " + folder.getAbsolutePath());
+            }
+        }
+    }
+
+    public static void createFileIfNotExists(File file, String content) {
+        if(!file.exists()) {
+            try {
+                Files.writeString(file.toPath(), "{}");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
