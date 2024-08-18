@@ -1,4 +1,4 @@
-package de.thegame4craft.Core;
+package de.thegame4craft.core;
 
 public class TimeInterval {
 
