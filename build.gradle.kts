@@ -13,22 +13,23 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("net.minestom:minestom-snapshots:6c5cd6544e")
-    implementation("org.slf4j:slf4j-api:2.0.16")
-    implementation("org.slf4j:slf4j-simple:2.0.16")
-    implementation("com.moandjiezana.toml:toml4j:0.7.2")
-    implementation("org.json:json:20240303")
+    implementation("net.minestom:minestom:2026.08.16-26.2")
+    implementation("org.slf4j:slf4j-api:2.0.18")
+    implementation("org.slf4j:slf4j-simple:2.0.18")
+    implementation("io.hotmoka:toml4j:0.7.3")
+    implementation("de.articdive:jnoise-pipeline:4.1.0")
+
 }
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21)) // Minestom has a minimum Java version of 21
+        languageVersion.set(JavaLanguageVersion.of(25)) // Minestom has a minimum Java version of 21
     }
 }
 
 tasks {
     jar {
         manifest {
-            attributes["Main-Class"] = "org.example.Main" // Change this to your main class
+            attributes["Main-Class"] = "de.thegame4craft.Main" // Change this to your main class
         }
     }
 
